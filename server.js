@@ -9,11 +9,21 @@ const tokenRoutes = require('./routes/tokens');
 const path = require("path");
 
 const app = express();
-app.use(cors(
-  origin: 'https://front-gules-mu.vercel.app', 
-  methods: ['GET', 'POST', 'DELETE', 'OPTIONS'], 
-  allowedHeaders: ['Content-Type', 'Authorization']
-));
+const allowedOrigins = ['https://front-gules-mu.vercel.app'];
+
+app.use((req, res, next) => {
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+    }
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', 'true'); // If you need to allow credentials
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200); // Handle preflight requests
+    }
+    next();
+});
 
 
 const port = 5000;
