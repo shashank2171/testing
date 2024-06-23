@@ -9,7 +9,11 @@ const tokenRoutes = require('./routes/tokens');
 const path = require("path");
 
 const app = express();
-app.use(cors());
+app.use(cors(
+  origin: 'https://front-gules-mu.vercel.app', 
+  methods: ['GET', 'POST', 'DELETE', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization']
+));
 
 
 const port = 5000;
