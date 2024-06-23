@@ -12,7 +12,7 @@ const app = express();
 app.use(cors({
     origin: 'https://testing-rouge-seven.vercel.app/', 
     methods: ['GET', 'POST', 'DELETE', 'OPTIONS'], 
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Access-Control-Allow-Origin','Content-Type', 'Authorization']
   }));
 
 
