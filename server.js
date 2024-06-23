@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 
-const port = 5001;
+const port = 5000;
 const mongoURI = 'mongodb+srv://harshtripathi042:harsh123@cluster0.etqbz6r.mongodb.net/unidash';
 
 mongoose.connect(mongoURI)
