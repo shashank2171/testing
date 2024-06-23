@@ -9,11 +9,7 @@ const tokenRoutes = require('./routes/tokens');
 const path = require("path");
 
 const app = express();
-app.use(cors({
-    origin: 'https://testing-rouge-seven.vercel.app/', 
-    methods: ['GET', 'POST', 'DELETE', 'OPTIONS'], 
-    allowedHeaders: ['Access-Control-Allow-Origin','Content-Type', 'Authorization']
-  }));
+app.use(cors());
 
 
 const port = 5000;
