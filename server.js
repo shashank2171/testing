@@ -9,7 +9,7 @@ const tokenRoutes = require('./routes/tokens');
 const path = require("path");
 
 const app = express();
-const allowedOrigins = ['https://testing-rouge-seven.vercel.app/api/v1/auth/signin'];
+const allowedOrigins = ['https://front-gules-mu.vercel.app'];
 
 app.use((req, res, next) => {
     const origin = req.headers.origin;
